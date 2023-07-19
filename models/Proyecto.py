@@ -88,36 +88,39 @@ def busca_genero(eventos,genero):
 
 
 def busqueda_evento(eventos):
-    cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S ")
-    while cursor.upper() not in "NAGS":
+    cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G")
+    while cursor.upper() not in "NAG":
         print("Ingreso incorrecto")
-        cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S ")
+        cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G")
     cursor = cursor.upper()
     if cursor == "N":
         nombre = input("Ingrese el nómbre del evento a buscar: ")
         if busca_nombre(eventos,nombre):
-            i = 0
-            while i < len(eventos):
-                if eventos[i].nombre == nombre:
-                    return (eventos[i])
+            lista = []
+            for evento in eventos:
+                if evento.nombre == nombre:
+                    lista.append(evento)
+            return lista
         else:
             print("Nombre de evento inexistente")
     elif cursor == "A":
         artista = input("Ingrese el Artista del evento a buscar: ")
         if busca_artista(eventos,artista):
-            i = 0
-            while i < len(eventos):
-                if eventos[i].artista == artista:
-                    return (eventos[i])    
+            lista = []
+            for evento in eventos:
+                if evento.artista == artista:
+                    lista.append(evento)
+            return lista
         else: 
             print("Nombre de Artista inexistente")
     elif cursor == "G":
-        genero = input("Ingrese el Artista del evento a buscar: ")
+        genero = input("Ingrese el genero del evento a buscar: ")
         if busca_genero(eventos,genero):
-            i = 0
-            while i < len(eventos):
-                if eventos[i].genero == genero:
-                    return (eventos[i])
+            
+            for evento in eventos:
+                if evento.genero == genero:
+                    lista.append(evento)
+            return lista
         else:
             print("Nombre de genero inexitente")
             
