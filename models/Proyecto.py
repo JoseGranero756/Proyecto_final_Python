@@ -88,39 +88,39 @@ def busca_genero(eventos,genero):
 
 
 def busqueda_evento(eventos):
-    cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G")
-    while cursor.upper() not in "NAG":
-        print("Ingreso incorrecto")
-        cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G")
-    cursor = cursor.upper()
-    if cursor == "N":
-        nombre = input("Ingrese el nómbre del evento a buscar: ")
-        if busca_nombre(eventos,nombre):
-            lista = []
-            for evento in eventos:
-                if evento.nombre == nombre:
-                    lista.append(evento)
-            return lista
-        else:
-            print("Nombre de evento inexistente")
-    elif cursor == "A":
-        artista = input("Ingrese el Artista del evento a buscar: ")
-        if busca_artista(eventos,artista):
-            lista = []
-            for evento in eventos:
-                if evento.artista == artista:
-                    lista.append(evento)
-            return lista
-        else: 
-            print("Nombre de Artista inexistente")
-    elif cursor == "G":
-        genero = input("Ingrese el genero del evento a buscar: ")
-        if busca_genero(eventos,genero):
-            
-            for evento in eventos:
-                if evento.genero == genero:
-                    lista.append(evento)
-            return lista
-        else:
-            print("Nombre de genero inexitente")
-            
+    lista = []
+    cursor = "Z"
+    while cursor != "S" and len(lista) > 0:
+        cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S")
+        while cursor.upper() not in "NAGS":
+            print("Ingreso incorrecto")
+            cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S")
+        cursor = cursor.upper()
+        if cursor == "N":
+            nombre = input("Ingrese el nómbre del evento a buscar: ")
+            if busca_nombre(eventos,nombre):
+                for evento in eventos:
+                    if evento.nombre == nombre:
+                        lista.append(evento)
+                return lista
+            else:
+                print("Nombre de evento inexistente")
+        elif cursor == "A":
+            artista = input("Ingrese el Artista del evento a buscar: ")
+            if busca_artista(eventos,artista):
+                for evento in eventos:
+                    if evento.artista == artista:
+                        lista.append(evento)
+                return lista
+            else: 
+                print("Nombre de Artista inexistente")
+        elif cursor == "G":
+            genero = input("Ingrese el genero del evento a buscar: ")
+            if busca_genero(eventos,genero):  
+                for evento in eventos:
+                    if evento.genero == genero:
+                        lista.append(evento)
+                return lista
+            else:
+                print("Nombre de genero inexitente")
+                
