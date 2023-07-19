@@ -61,3 +61,57 @@ class RutaVisita:
         
     def a_json(self):
         return {"Tipo" : "RutaVisita", "id" : self.id, "Nombre" : self.nombre , "Destinos" : self.destinos}
+    
+def busca_nombre(eventos,nombre):
+    i = 0
+    b = False
+    while i < len(eventos) and b == False:
+        if eventos[i].nombre == nombre:
+            b =True
+    return b
+
+def busca_artista(eventos,artista):
+    i = 0
+    b = False
+    while i < len(eventos) and b == False:
+        if eventos[i].artista == artista:
+            b =True
+    return b
+
+def busca_genero(eventos,genero):
+    i = 0
+    b = False
+    while i < len(eventos) and b == False:
+        if eventos[i].genero == genero:
+            b =True
+    return b
+
+
+def busqueda_evento(eventos):
+    cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S ")
+    while cursor.upper() not in "NAGS":
+        print("Ingreso incorrecto")
+        cursor = input("para buscar por nombre presiona N, para buscar por artista presiona A, para buscar por genero presiona G para salir presiona S ")
+    cursor = cursor.upper()
+    if cursor == "N":
+        nombre = input("Ingrese el nómbre del evento a buscar: ")
+        if busca_nombre(eventos,nombre):
+            i = 0
+            while i < len(eventos):
+                if eventos[i].nombre == nombre:
+                    return (eventos[i])
+    elif cursor == "A":
+        artista = input("Ingrese el Artista del evento a buscar: ")
+        if busca_nombre(eventos,artista):
+            i = 0
+            while i < len(eventos):
+                if eventos[i].nombre == artista:
+                    return (eventos[i])    
+    elif cursor == "G":
+        genero = input("Ingrese el Artista del evento a buscar: ")
+        if busca_nombre(eventos,genero):
+            i = 0
+            while i < len(eventos):
+                if eventos[i].nombre == nombre:
+                    return (eventos[i])
+            
