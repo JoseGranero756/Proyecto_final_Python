@@ -14,7 +14,16 @@ class Evento:
         
     def a_json(self):
         return { "Tipo" : "Evento", "id" : self.id, "Nombre" : self.nombre, "Artista" : self.artista, "Genero" : self.genero, "id ubicación" : self.id_ubiacion, "Hora inicio" : self.hora_inicio, "Hora fin" : self.hora_fin, "Descripción" : self.descripcion, "Imagen" : self.imagen }
-    
+
+class Lista_Eventos:
+    def __init__(self,eventos = None):
+        if eventos == None:
+            self.eventos = []
+        else:
+            self.eventos = eventos
+    def a_json(self):
+        return {"Tipo" : "Lista Eventos", "Eventos" : self.eventos}
+        
 class Usuario:
     def __init__(self,id,nombre,apellido,historial_eventos):
         self.id = id
