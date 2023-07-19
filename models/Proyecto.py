@@ -100,18 +100,24 @@ def busqueda_evento(eventos):
             while i < len(eventos):
                 if eventos[i].nombre == nombre:
                     return (eventos[i])
+        else:
+            print("Nombre de evento inexistente")
     elif cursor == "A":
         artista = input("Ingrese el Artista del evento a buscar: ")
-        if busca_nombre(eventos,artista):
+        if busca_artista(eventos,artista):
             i = 0
             while i < len(eventos):
-                if eventos[i].nombre == artista:
+                if eventos[i].artista == artista:
                     return (eventos[i])    
+        else: 
+            print("Nombre de Artista inexistente")
     elif cursor == "G":
         genero = input("Ingrese el Artista del evento a buscar: ")
-        if busca_nombre(eventos,genero):
+        if busca_genero(eventos,genero):
             i = 0
             while i < len(eventos):
-                if eventos[i].nombre == nombre:
+                if eventos[i].genero == genero:
                     return (eventos[i])
+        else:
+            print("Nombre de genero inexitente")
             
