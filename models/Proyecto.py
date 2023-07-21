@@ -3,7 +3,7 @@ import datetime
 class Evento:
     def __init__(
             self,
-            id,
+            id_evento, #modifique nombre id para mas claridad.
             nombre,
             artista,
             genero,
@@ -13,7 +13,7 @@ class Evento:
             descripcion,
             imagen):
         
-        self.id = id
+        self.id_evento = id_evento
         self.nombre = nombre
         self.artista = artista
         self.genero = genero
@@ -24,8 +24,9 @@ class Evento:
         self.imagen = imagen
         
     def a_json(self):
-        return { "Tipo" : "Evento", 
-                "id" : self.id, 
+        return { 
+                "Tipo" : "Evento", 
+                "id" : self.id_evento, 
                 "Nombre" : self.nombre, 
                 "Artista" : self.artista, 
                 "Genero" : self.genero, 
@@ -33,42 +34,52 @@ class Evento:
                 "Hora inicio" : self.hora_inicio, 
                 "Hora fin" : self.hora_fin, 
                 "Descripción" : self.descripcion, 
-                "Imagen" : self.imagen }
+                "Imagen" : self.imagen
+                }
     
 class Usuario:
-    def __init__(self,id,nombre,apellido,historial_eventos):
-        self.id = id
+    
+    def __init__(self,id_usuario,nombre,apellido): #suprimi historial evento ya que empieza en []
+        self.id_usuario = id_usuario #cambie por id usuario
         self.nombre = nombre
         self.apellido = apellido
-        self.historial_eventos = historial_eventos
-        
-    def agregar_evento(self, evento):
-        self.historial_eventos.append(evento)
+        #self.historial_eventos = historial_eventos
+        #El historial cuando inicia empieza en vacio siempre. despues se agregan eventos con agregar eventos
+        self.historial_evento = []
+
+    def agregar_evento(self, id_evento):
+        self.historial_eventos.append(id_evento) #Serecibe un id_evento
     
     def a_json(self):
-        return {"Tipo" : "Usuario" , 
-                "id" : self.id, 
+        return {
+                "Tipo" : "Usuario",
+                "id" : self.id_usuario, 
                 "Nombre" : self.nombre, 
                 "Apellido" : self.apellido, 
-                "Historial de eventos" : self.historial_eventos}
+                "Historial de eventos" : self.historial_evento 
+                # ver como pasar el historial de evento a json
+                }
 
 class Ubicacion:
-    def __init__(self,id,nombre,direccion,coordenadas):
-        self.id = id
+    def __init__(self, id_ubicacion, nombre ,direccion , coordenadas):
+        self.id_ubicacion = id_ubicacion 
         self.nombre = nombre
         self.direccion = direccion
-        self.coordenadas = coordenadas
+        self.coordenadas = coordenadas #Latitud y longitud
     
     def a_json(self):
-        return {"Tipo" : "Ubicación" , 
-                "id" : self.id, 
+        return {
+                "Tipo" : "Ubicación" , 
+                "id" : self.id_ubicacion, 
                 "Nombre" : self.nombre, 
-                "Dirección" : self.direccion , 
-                "Coordenadas" : self.coordenadas}
+                "Dirección" : self.direccion, 
+                "Coordenadas" : self.coordenadas
+                #Si queremos que esto vaya a json calculo que queremos que esto sea ya convertido a texto 
+                }
         
 class Review:
-    def __init__(self,id,id_evento,id_usuario,calificacion,comentario,animo):
-        self.id = id
+    def __init__(self, id_review, id_evento, id_usuario, calificacion , comentario, animo):
+        self.id = id_review
         self.id_evento = id_evento
         self.id_usuario = id_usuario
         self.calificacion = calificacion
@@ -85,7 +96,7 @@ class Review:
                 "Animo" : self.animo}
 
 class RutaVisita:
-    def __init__(self,id,nombre,destinos):
+    def __init__(self,id,nombre,destinos): #No entiendo que hace destino pero creo que deberia empezar en [] si lo vamos a ir agregando.
         self.id = id
         self.nombre = nombre
         self.destinos = destinos
@@ -98,3 +109,4 @@ class RutaVisita:
                 "id" : self.id, 
                 "Nombre" : self.nombre, 
                 "Destinos" : self.destinos}
+    
