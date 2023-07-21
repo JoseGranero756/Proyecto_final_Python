@@ -1,7 +1,18 @@
 import json
 import datetime
 class Evento:
-    def __init__(self,id,nombre,artista,genero,id_ubicacion,hora_inicio,hora_fin,descripcion,imagen):
+    def __init__(
+            self,
+            id,
+            nombre,
+            artista,
+            genero,
+            id_ubicacion,
+            hora_inicio,
+            hora_fin,
+            descripcion,
+            imagen):
+        
         self.id = id
         self.nombre = nombre
         self.artista = artista
@@ -13,7 +24,16 @@ class Evento:
         self.imagen = imagen
         
     def a_json(self):
-        return { "Tipo" : "Evento", "id" : self.id, "Nombre" : self.nombre, "Artista" : self.artista, "Genero" : self.genero, "id ubicación" : self.id_ubiacion, "Hora inicio" : self.hora_inicio, "Hora fin" : self.hora_fin, "Descripción" : self.descripcion, "Imagen" : self.imagen }
+        return { "Tipo" : "Evento", 
+                "id" : self.id, 
+                "Nombre" : self.nombre, 
+                "Artista" : self.artista, 
+                "Genero" : self.genero, 
+                "id ubicación" : self.id_ubiacion, 
+                "Hora inicio" : self.hora_inicio, 
+                "Hora fin" : self.hora_fin, 
+                "Descripción" : self.descripcion, 
+                "Imagen" : self.imagen }
     
 class Usuario:
     def __init__(self,id,nombre,apellido,historial_eventos):
@@ -26,7 +46,11 @@ class Usuario:
         self.historial_eventos.append(evento)
     
     def a_json(self):
-        return {"Tipo" : "Usuario" , "id" : self.id, "Nombre" : self.nombre, "Apellido" : self.apellido, "Historial de eventos" : self.historial_eventos}
+        return {"Tipo" : "Usuario" , 
+                "id" : self.id, 
+                "Nombre" : self.nombre, 
+                "Apellido" : self.apellido, 
+                "Historial de eventos" : self.historial_eventos}
 
 class Ubicacion:
     def __init__(self,id,nombre,direccion,coordenadas):
@@ -36,7 +60,11 @@ class Ubicacion:
         self.coordenadas = coordenadas
     
     def a_json(self):
-        return {"Tipo" : "Ubicación" , "id" : self.id, "Nombre" : self.nombre, "Dirección" : self.direccion , "Coordenadas" : self.coordenadas}
+        return {"Tipo" : "Ubicación" , 
+                "id" : self.id, 
+                "Nombre" : self.nombre, 
+                "Dirección" : self.direccion , 
+                "Coordenadas" : self.coordenadas}
         
 class Review:
     def __init__(self,id,id_evento,id_usuario,calificacion,comentario,animo):
@@ -48,7 +76,13 @@ class Review:
         self.animo = animo
         
     def a_json(self):
-        return {"Tipo" : "Review", "id" : self.id, "id evento" : self.id_evento, "id usuario": self.id_usuario, "Calificación" : self.calificacion, "Comentario" : self.comentario, "Animo" : self.animo}
+        return {"Tipo" : "Review", 
+                "id" : self.id, 
+                "id evento" : self.id_evento, 
+                "id usuario": self.id_usuario, 
+                "Calificación" : self.calificacion, 
+                "Comentario" : self.comentario, 
+                "Animo" : self.animo}
 
 class RutaVisita:
     def __init__(self,id,nombre,destinos):
@@ -60,4 +94,7 @@ class RutaVisita:
         self.destinos.append(destino)
         
     def a_json(self):
-        return {"Tipo" : "RutaVisita", "id" : self.id, "Nombre" : self.nombre , "Destinos" : self.destinos}
+        return {"Tipo" : "RutaVisita", 
+                "id" : self.id, 
+                "Nombre" : self.nombre, 
+                "Destinos" : self.destinos}
