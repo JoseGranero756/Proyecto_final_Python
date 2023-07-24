@@ -64,13 +64,13 @@ class Evento:
     
 class Usuario:
     
-    def __init__(self,id_usuario,nombre,apellido): #suprimi historial evento ya que empieza en []
+    def __init__(self,id_usuario,nombre,apellido,historial_eventos=[]): #suprimi historial evento ya que empieza en []
         self.id_usuario = id_usuario #cambie por id usuario
         self.nombre = nombre
         self.apellido = apellido
         #self.historial_eventos = historial_eventos
         #El historial cuando inicia empieza en vacio siempre. despues se agregan eventos con agregar eventos
-        self.historial_evento = []
+        self.historial_eventos = historial_eventos
 
     def agregar_evento(self, id_evento):
         self.historial_eventos.append(id_evento) #Serecibe un id_evento
@@ -91,7 +91,7 @@ class Usuario:
                 "id" : self.id_usuario, 
                 "Nombre" : self.nombre, 
                 "Apellido" : self.apellido, 
-                "Historial de eventos" : self.historial_evento 
+                "Historial de eventos" : self.historial_eventos 
                 # ver como pasar el historial de evento a json
                 }
 
