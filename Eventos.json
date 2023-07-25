@@ -1,0 +1,5 @@
+{"Tipo": "Usuario", "id": 0, "Nombre": "Nombre0", "Apellido": "Apellido0", "Historial de eventos": "[]"}
+{"Tipo": "Usuario", "id": 1, "Nombre": "Nombre1", "Apellido": "Apellido1", "Historial de eventos": "[0]"}
+{"Tipo": "Usuario", "id": 2, "Nombre": "Nombre2", "Apellido": "Apellido2", "Historial de eventos": "[0, 1]"}
+{"Tipo": "Usuario", "id": 3, "Nombre": "Nombre3", "Apellido": "Apellido3", "Historial de eventos": "[0, 1, 2]"}
+{"Tipo": "Usuario", "id": 4, "Nombre": "Nombre4", "Apellido": "Apellido4", "Historial de eventos": "[0, 1, 2, 3]"}
