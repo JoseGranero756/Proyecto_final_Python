@@ -21,9 +21,9 @@ class Ubicacion:
         """Devuelve un diccionario con la informacion del objeto."""
         return {
                 "Tipo" : "Ubicación" , 
-                "id" : self.id_ubicacion, 
-                "Nombre" : self.nombre, 
-                "Dirección" : self.direccion, 
-                "Coordenadas" : self.coordenadas
+                "id_ubicacion" : self.id_ubicacion, 
+                "nombre" : self.nombre, 
+                "direccion" : self.direccion, 
+                "coordenadas" : self.coordenadas
                 #Si queremos que esto vaya a json calculo que queremos que esto sea ya convertido a texto 
                 }

@@ -20,6 +20,6 @@ class RutaVisita:
     def a_json(self):
         """Devuelve un diccionario con la informacion del objeto."""
         return {"Tipo" : "RutaVisita", 
-                "id" : self.id, 
-                "Nombre" : self.nombre, 
-                "Destinos" : self.destinos}
+                "id_ruta_visita" : self.id_ruta_visita, 
+                "nombre" : self.nombre, 
+                "destinos" : self.destinos}

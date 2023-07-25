@@ -52,13 +52,13 @@ class Evento:
         """Devuelve un diccionario con la informacion del objeto."""
         return { 
                 "Tipo" : "Evento", 
-                "id" : self.id_evento, 
-                "Nombre" : self.nombre, 
-                "Artista" : self.artista, 
-                "Genero" : self.genero, 
-                "id ubicación" : self.id_ubiacion, 
-                "Hora inicio" : self.hora_inicio, 
-                "Hora fin" : self.hora_fin, 
-                "Descripción" : self.descripcion, 
-                "Imagen" : self.imagen
+                "id_evento" : self.id_evento, 
+                "nombre" : self.nombre, 
+                "artista" : self.artista, 
+                "genero" : self.genero, 
+                "id_ubicación" : self.id_ubiacion, 
+                "hora_inicio" : self.hora_inicio, 
+                "hora_fin" : self.hora_fin, 
+                "descripcion" : self.descripcion, 
+                "imagen" : self.imagen
                 }

@@ -22,9 +22,9 @@ class Review:
     def a_json(self):
         """Devuelve un diccionario con la informacion del objeto."""
         return {"Tipo" : "Review", 
-                "id" : self.id, 
-                "id evento" : self.id_evento, 
-                "id usuario": self.id_usuario, 
-                "Calificación" : self.calificacion, 
-                "Comentario" : self.comentario, 
-                "Animo" : self.animo}
+                "id_review" : self.id_review, 
+                "id_evento" : self.id_evento, 
+                "id_usuario": self.id_usuario, 
+                "calificacion" : self.calificacion, 
+                "comentario" : self.comentario, 
+                "animo" : self.animo}

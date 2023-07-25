@@ -26,9 +26,9 @@ class Usuario:
         """Devuelve un diccionario con la informacion del objeto."""
         return {
                 "Tipo" : "Usuario",
-                "id" : self.id_usuario, 
-                "Nombre" : self.nombre, 
-                "Apellido" : self.apellido, 
-                "Historial de eventos" : self.historial_eventos 
+                "id_usuario" : self.id_usuario, 
+                "nombre" : self.nombre, 
+                "apellido" : self.apellido, 
+                "historial_eventos" : self.historial_eventos 
                 # ver como pasar el historial de evento a json
                 }
