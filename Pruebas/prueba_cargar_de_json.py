@@ -8,7 +8,7 @@ from Usuario import Usuario
 # print(lista_usuarios)
 ruta = r"C:\Users\Cristian\Documents\Academia Cimmer Iber\Programacion Python\Archivos Proyecto Final\Proyecto_final_Python\Pruebas\evento.json"
 ruta1 = "evento.json"
-ruta2 = "data\evento.json"
+ruta2 = r"data\usuario.json"
 # with open(ruta2, "r") as f:
 #     data = json.load(f)
 # for usuario in data:
