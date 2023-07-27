@@ -16,10 +16,6 @@ class ControladorEventos:
             evento = self.modelo_evento[indice]
             self.app.vista_info.mostrar_info_evento(evento)
             self.app.cambiar_frame(self.app.vista_info)
-<<<<<<< HEAD
-=======
-            
->>>>>>> main
     def regresar_inicio(self):
         self.app.cambiar_frame(self.app.vista_inicio)
         

@@ -30,7 +30,7 @@ class VistaInicio(tk.Frame):
         self.descripcion.grid(row=1, column=0, pady=50)
 
         # Crea el botón para ir a los eventos asistidos y lo agrega a la vista
-        self.boton_juegos = tk.Button(
-            self, text="Ver eventos asistidos", command=self.controlador.mostrar_eventos_asistidos
+        self.boton_eventos = tk.Button(
+            self, text="Ver eventos", command=self.controlador.mostrar_eventos
         )
-        self.boton_juegos.grid(row=2, column=0, pady=10)
+        self.boton_eventos.grid(row=2, column=0, pady=10)

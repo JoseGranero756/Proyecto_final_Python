@@ -67,7 +67,7 @@ class Evento:
     
     @classmethod
     def cargar_de_json(cls, archivo):
-        with open(archivo, "r") as f:
+        with open(archivo, "r",encoding = "utf8") as f:
             json_eventos = json.load(f)
         lista_objeto_eventos = []
         for json_evento in json_eventos:

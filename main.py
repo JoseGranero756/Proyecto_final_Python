@@ -26,7 +26,7 @@ class Aplicacion(tk.Tk):
         self.cambiar_frame(self.vista_inicio)
     
     def inicializar(self):
-        eventos = Evento.de_json()
+        eventos = Evento.cargar_de_json("data/evento.json")
         
         controlador_inicio = ControladorInicio(self)
         controlador_eventos = ControladorEventos(self,eventos)
@@ -48,7 +48,7 @@ class Aplicacion(tk.Tk):
     
         
 if __name__ == "__main__":
-    app = Aplicacion
+    app = Aplicacion()
     app.mainloop()
         
         
