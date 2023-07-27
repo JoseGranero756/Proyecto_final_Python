@@ -56,9 +56,20 @@ class Evento:
                 "nombre" : self.nombre, 
                 "artista" : self.artista, 
                 "genero" : self.genero, 
-                "id_ubicación" : self.id_ubiacion, 
+                "id_ubicacion" : self.id_ubicacion, 
                 "hora_inicio" : self.hora_inicio, 
                 "hora_fin" : self.hora_fin, 
                 "descripcion" : self.descripcion, 
                 "imagen" : self.imagen
                 }
+    
+    @classmethod
+    def cargar_de_json(cls, archivo):
+        with open(archivo, "r") as f:
+            json_eventos = json.load(f)
+        lista_objeto_eventos = []
+        for json_evento in json_eventos:
+            del json_evento["Tipo"]
+            evento_objeto = cls.de_json(json_evento)
+            lista_objeto_eventos.append(evento_objeto)    
+        return lista_objeto_eventos  
