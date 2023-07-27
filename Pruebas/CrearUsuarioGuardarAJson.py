@@ -25,8 +25,8 @@ for i in range(5):
     u1_dic = u1.a_json()
     lista_dicc.append(u1_dic)
     #Cargamos el usuario
-with open(r"data\evento.json","w") as Eventos:
-    json.dump(lista_dicc,Eventos, indent=4)
-    Eventos.write("\n")
+with open(r"data\usuario.json","w") as Usuario:
+    json.dump(lista_dicc,Usuario, indent=4)
+    Usuario.write("\n")
     
 
