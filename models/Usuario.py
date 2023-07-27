@@ -19,8 +19,8 @@ class Usuario:
         id_usuario = json_dato["id_usuario"]
         nombre = json_dato["nombre"]
         apellido = json_dato["apellido"]
-        historial_evento = json_dato["historial_evento"]
-        return cls(id_usuario, nombre, apellido, historial_evento)        
+        historial_eventos = json_dato["historial_eventos"]
+        return cls(id_usuario, nombre, apellido, historial_eventos)        
 
     def a_json(self):
         """Devuelve un diccionario con la informacion del objeto."""
@@ -32,3 +32,14 @@ class Usuario:
                 "historial_eventos" : self.historial_eventos 
                 # ver como pasar el historial de evento a json
                 }
+    
+    @classmethod
+    def cargar_de_json(cls, archivo):
+        with open(archivo, "r") as f:
+            json_usuarios = json.load(f)
+        lista_objeto_usuario = []
+        for json_usuario in json_usuarios:
+            del json_usuario["Tipo"]
+            usuario_objeto = cls.de_json(json_usuario)
+            lista_objeto_usuario.append(usuario_objeto)    
+        return lista_objeto_usuario     

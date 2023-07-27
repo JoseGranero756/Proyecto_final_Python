@@ -1,7 +1,7 @@
 import json
 import sys
 sys.path.append(r'.\models')
-from Proyecto import Usuario 
+from Usuario import Usuario 
 
 u1 = Usuario(1,"Cristian","Arias",[1,2,3])
 u1_dic = u1.a_json()
@@ -11,6 +11,7 @@ print(type(u1_dic))
 u1_json = json.dumps(u1_dic)
 print(u1_json)
 print(type(u1_json))
+lista_dicc = []
 #Serializar y guardar
 for i in range(5):
     #creamos lista eventos
@@ -22,10 +23,10 @@ for i in range(5):
     #Creamos usuario i
     u1 = Usuario(i,"Nombre"+str(i), "Apellido" + str(i), l_eventos_json)
     u1_dic = u1.a_json()
-
+    lista_dicc.append(u1_dic)
     #Cargamos el usuario
-    with open("Eventos.json","a") as Eventos:
-        json.dump(u1_dic,Eventos)
-        Eventos.write("\n")
+with open(r"data\usuario.json","w") as Usuario:
+    json.dump(lista_dicc,Usuario, indent=4)
+    Usuario.write("\n")
     
 
