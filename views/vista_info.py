@@ -1,3 +1,3 @@
 class VistaInfo:
-    def __init__(self,info):
-        self.info = info
+    def __init__(self) -> None:
+        pass

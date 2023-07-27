@@ -16,9 +16,9 @@ from controllers.controlador_eventos import ControladorEventos
 from controllers.controlador_info import ControladorInfo
 
 
-class aplicacion(tk.Tk):
+class Aplicacion(tk.Tk):
     def __init__(self):
-        tk.TK.__init__(self)
+        tk.Tk.__init__(self)
         self.title("Tour de musica")
         self.geometry("330x300")
         self.resizable(False,False)
@@ -26,7 +26,7 @@ class aplicacion(tk.Tk):
         self.cambiar_frame(self.vista_inicio)
     
     def inicializar(self):
-        eventos = Evento.de_json(data/evento.json)
+        eventos = Evento.de_json()
         
         controlador_inicio = ControladorInicio(self)
         controlador_eventos = ControladorEventos(self,eventos)
@@ -35,6 +35,22 @@ class aplicacion(tk.Tk):
         self.vista_inicio = VistaInicio(self, controlador_inicio)
         self.vista_eventos = VistaEventos(self, controlador_eventos)
         self.vista_info = VistaInfo(self, controlador_info)
+        
+        self.ajustar_frame(self.vista_inicio)
+        self.ajustar_frame(self.vista_eventos)
+        self.ajustar_frame(self.vista_info)
+        
+    def ajustar_frame(self, frame):
+        frame.grid(row=0, column=0, sticky="nsew")
+        
+    def cambiar_frame(self, frame_destino):
+        frame_destino.tkraise()
+    
+        
+if __name__ == "__main__":
+    app = Aplicacion
+    app.mainloop()
+        
         
 
 

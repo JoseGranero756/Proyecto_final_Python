@@ -48,6 +48,8 @@ class Evento:
             imagen
         )
     
+    
+    
     def a_json(self):
         """Devuelve un diccionario con la informacion del objeto."""
         return { 
