@@ -35,6 +35,7 @@ class Ubicacion:
         lista_objeto_ubicacion = []
         for json_ubicacion in json_ubicacion:
             del json_ubicacion["Tipo"]
-            usuario_objeto = cls.de_json(json_ubicacion)
-            lista_objeto_ubicacion.append(usuario_objeto)    
-        return lista_objeto_ubicacion    
+            ubicacion_objeto = cls.de_json(json_ubicacion)
+            lista_objeto_ubicacion.append(ubicacion_objeto)    
+        return lista_objeto_ubicacion
+
