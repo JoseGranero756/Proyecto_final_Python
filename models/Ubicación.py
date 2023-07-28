@@ -27,3 +27,15 @@ class Ubicacion:
                 "coordenadas" : self.coordenadas
                 #Si queremos que esto vaya a json calculo que queremos que esto sea ya convertido a texto 
                 }
+    
+    @classmethod
+    def cargar_de_json(cls, archivo):
+        with open(archivo, "r") as f:
+            json_ubicacion = json.load(f)
+        lista_objeto_ubicacion = []
+        for json_ubicacion in json_ubicacion:
+            del json_ubicacion["Tipo"]
+            ubicacion_objeto = cls.de_json(json_ubicacion)
+            lista_objeto_ubicacion.append(ubicacion_objeto)    
+        return lista_objeto_ubicacion
+
