@@ -1,0 +1,47 @@
+[
+    {
+        "Tipo": "RutaVisita",
+        "id_ruta_visita": 0,
+        "nombre": "Ruta 0",
+        "destinos": [
+            3,
+            2
+        ]
+    },
+    {
+        "Tipo": "RutaVisita",
+        "id_ruta_visita": 1,
+        "nombre": "Ruta 1",
+        "destinos": [
+            2,
+            3
+        ]
+    },
+    {
+        "Tipo": "RutaVisita",
+        "id_ruta_visita": 2,
+        "nombre": "Ruta 2",
+        "destinos": [
+            3,
+            1
+        ]
+    },
+    {
+        "Tipo": "RutaVisita",
+        "id_ruta_visita": 3,
+        "nombre": "Ruta 3",
+        "destinos": [
+            4,
+            2
+        ]
+    },
+    {
+        "Tipo": "RutaVisita",
+        "id_ruta_visita": 4,
+        "nombre": "Ruta 4",
+        "destinos": [
+            4,
+            1
+        ]
+    }
+]
