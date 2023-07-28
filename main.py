@@ -20,8 +20,7 @@ class Aplicacion(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         self.title("Tour de musica")
-        self.geometry("330x300")
-        self.resizable(False,False)
+        self.geometry("330x330")
         self.inicializar()
         self.cambiar_frame(self.vista_inicio)
     
