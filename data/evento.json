@@ -1,6 +1,6 @@
 [
     {
-        "Tipo": "Evento En Vivo",
+        "Tipo": "Evento",
         "id_evento": 0,
         "nombre": "Miguel Mateos",
         "artista": "Miguel Mateos",
@@ -12,7 +12,7 @@
         "imagen": "assets/imagen0.jpg"
     },
     {
-        "Tipo": "Evento Musical y Humorístico",
+        "Tipo": "Evento",
         "id_evento": 1,
         "nombre": "Woody Allen Night",
         "artista": "Paris Jazz Club",
@@ -24,7 +24,7 @@
         "imagen": "assets/imagen1.jpg"
     },
     {
-        "Tipo": "Musica en Vivo",
+        "Tipo": "Evento",
         "id_evento": 2,
         "nombre": "",
         "artista": "El Cuarteto de Nos",
@@ -36,7 +36,7 @@
         "imagen": "assets/imagen2.jpg"
     },
     {
-        "Tipo": "Rap",
+        "Tipo": "Evento",
         "id_evento": 3,
         "nombre": "Homer el Mero Mero",
         "artista": "Lucas Darío Gimenez",
@@ -48,7 +48,7 @@
         "imagen": "assets/imagen3.jpg"
     },
     {
-        "Tipo": "Música en Vivo",
+        "Tipo": "Evento",
         "id_evento": 4,
         "nombre": "Fito Páez",
         "artista": "Fito Páez",
