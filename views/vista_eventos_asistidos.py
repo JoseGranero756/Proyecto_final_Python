@@ -9,7 +9,7 @@ class VistaEventosAsistidos(tk.Frame):
         self.master = master
         self.controlador = controlador
         
-        self.titulo = tk.Label(self,text = "eventos asistidos")
+        self.titulo = tk.Label(self,text = "Eventos Asistidos")
         self.titulo.pack(pady=10)
         
         self.listbox = tk.Listbox(self)
