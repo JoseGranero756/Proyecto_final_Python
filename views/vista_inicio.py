@@ -52,7 +52,7 @@ class VistaInicio(tk.Frame):
               self, text="Ver asistidos", command=self.controlador.mostrar_asistidos
         )
         self.boton_busqueda = tk.Button(
-            self, text="buscar/filtrar", #command=self.controlador.mostrar_busqueda
+            self, text="buscar/filtrar", command=self.controlador.mostrar_busca_filtra
         )
         self.boton_eventos.grid(row=2, column=0)
         self.boton_asistidos.grid(row=2, column=1)
