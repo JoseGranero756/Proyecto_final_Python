@@ -12,11 +12,7 @@
         "imagen": "assets/imagen0.jpg"
     },
     {
-<<<<<<< HEAD
-        "Tipo": "Evento",
-=======
         "Tipo": "Evento Musical y Humoristico",
->>>>>>> main
         "id_evento": 1,
         "nombre": "Woody Allen Night",
         "artista": "Paris Jazz Club",
