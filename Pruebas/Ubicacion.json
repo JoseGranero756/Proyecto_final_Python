@@ -1,34 +1,30 @@
 [
-    {   "Tipo": "Ubicaciôn",
-        "id_ubicacion": 0,
+    {
+        "id": 0,
         "nombre": "Miguel Mateos",
         "direccion": "Zuviría 70, Salta Capital",
         "coordenadas":[-24.789011090594087, -65.40955358801618]
     },
-    {   
-        "Tipo": "Ubicaciôn",
-        "id_ubicacion": 1,
+    {
+        "id": 1,
         "nombre": "Paris Jazz Club",
         "direccion": "Caseros 460, Salta Capital",
         "coordenadas":[-24.789849030007257, -65.40887795353827]
     },
-    {   
-        "Tipo": "Ubicaciôn",
-        "id_ubicacion": 2,
+    {
+        "id": 2,
         "nombre": "El Cuarteto de Nos",
         "direccion": "Zuviría 70, Salta Capital",
         "coordenadas": [-24.789011090594087, -65.40955358801618]
     },
-    {   
-        "Tipo": "Ubicaciôn",
-        "id_ubicacion": 3,
+    {
+        "id": 3,
         "nombre": "Homer el Mero Mero",
         "direccion": "Zuviría 70, Salta Capital",
         "coordenadas":[-24.789011090594087, -65.40955358801618]
     },
-    {   
-        "Tipo": "Ubicaciôn",
-        "id_ubicacion": 4,
+    {
+        "id": 4,
         "nombre": "Fito Paez",
         "direccion": "Ibazeta 1550, Salta Capital",
         "coordenadas":[-24.775980338585914, -65.4232918847746]

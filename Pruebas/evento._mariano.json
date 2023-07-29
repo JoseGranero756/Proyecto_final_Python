@@ -1,6 +1,6 @@
 [
     {
-        "Tipo": "Evento",
+        "Tipo": "Evento En Vivo",
         "id_evento": 0,
         "nombre": "Miguel Mateos",
         "artista": "Miguel Mateos",
@@ -9,14 +9,10 @@
         "hora_inicio": "20:45:00",
         "hora_fin": "02:47:18",
         "descripcion": "Presentación de gira",
-        "imagen": "assets/imagen0.jpg"
+        "imagen": "models/imagen0.jpg"
     },
     {
-<<<<<<< HEAD
-        "Tipo": "Evento",
-=======
-        "Tipo": "Evento Musical y Humoristico",
->>>>>>> main
+        "Tipo": "Evento Musical y Humorístico",
         "id_evento": 1,
         "nombre": "Woody Allen Night",
         "artista": "Paris Jazz Club",
@@ -25,22 +21,22 @@
         "hora_inicio": "20:00:00",
         "hora_fin": "23:50:00",
         "descripcion": "Show de Musica y Humor",
-        "imagen": "assets/imagen1.jpg"
+        "imagen": "models/imagen1.jpg"
     },
     {
-        "Tipo": "Evento",
+        "Tipo": "Musica en Vivo",
         "id_evento": 2,
-        "nombre": "Musica en vivo cuarteto de Nos",
+        "nombre": "",
         "artista": "El Cuarteto de Nos",
         "genero": "Rock",
         "id_ubicacion": "5",
         "hora_inicio": "20:00:00",
         "hora_fin": "23:00:00",
         "descripcion": "Tour de la banda Uruguaya",
-        "imagen": "assets/imagen2.jpg"
+        "imagen": "models/imagen2.jpg"
     },
     {
-        "Tipo": "Evento",
+        "Tipo": "Rap",
         "id_evento": 3,
         "nombre": "Homer el Mero Mero",
         "artista": "Lucas Darío Gimenez",
@@ -49,10 +45,10 @@
         "hora_inicio": "10:40:00",
         "hora_fin": "13:59:02",
         "descripcion": "Éxitos de álbumes como “Solo Negocios”, “En punga” y su último lanzamiento en grupo “MDB”",
-        "imagen": "assets/imagen3.jpg"
+        "imagen": "models/imagen3.jpg"
     },
     {
-        "Tipo": "Evento",
+        "Tipo": "Música en Vivo",
         "id_evento": 4,
         "nombre": "Fito Páez",
         "artista": "Fito Páez",
@@ -61,6 +57,6 @@
         "hora_inicio": "21:30:00",
         "hora_fin": "00:40:00",
         "descripcion": "Presenta: Tour el amor 30 años después del amor",
-        "imagen": "assets/imagen4.jpg"
+        "imagen": "models/imagen4.jpg"
     }
 ]

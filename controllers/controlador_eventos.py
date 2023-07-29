@@ -11,6 +11,11 @@ class ControladorEventos:
         obtiene el indice del evento seleccionado y llama a la vista de
         información para mostrar la informacion del evento
         """
-        indice = self.app.vista_
-        
+        indice = self.app.vista_eventos.obtener_evento_seleccionado()
+        if indice is not None:
+            evento = self.modelo_evento[indice]
+            self.app.vista_info.mostrar_info_evento(evento)
+            self.app.cambiar_frame(self.app.vista_info)
+    def regresar_inicio(self):
+        self.app.cambiar_frame(self.app.vista_inicio)
         
