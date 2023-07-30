@@ -1,6 +1,6 @@
 [
     {
-        "Tipo": "Evento En Vivo",
+        "Tipo": "Evento En Vivo se cae de culo",
         "id_evento": 0,
         "nombre": "Miguel Mateos",
         "artista": "Miguel Mateos",
@@ -9,7 +9,7 @@
         "hora_inicio": "20:45:00",
         "hora_fin": "02:47:18",
         "descripcion": "Presentación de gira",
-        "imagen": "models/imagen0.jpg"
+        "imagen": "assets/imagen0.jpg"
     },
     {
         "Tipo": "Evento Musical y Humoristico",
@@ -21,7 +21,7 @@
         "hora_inicio": "20:00:00",
         "hora_fin": "23:50:00",
         "descripcion": "Show de Musica y Humor",
-        "imagen": "models/imagen1.jpg"
+        "imagen": "assets/imagen1.jpg"
     },
     {
         "Tipo": "Musica en Vivo",
@@ -33,7 +33,7 @@
         "hora_inicio": "20:00:00",
         "hora_fin": "23:00:00",
         "descripcion": "Tour de la banda Uruguaya",
-        "imagen": "models/imagen2.jpg"
+        "imagen": "assets/imagen2.jpg"
     },
     {
         "Tipo": "Rap",
@@ -45,7 +45,7 @@
         "hora_inicio": "10:40:00",
         "hora_fin": "13:59:02",
         "descripcion": "Éxitos de álbumes como “Solo Negocios”",
-        "imagen": "models/imagen3.jpg"
+        "imagen": "assets/imagen3.jpg"
     },
     {
         "Tipo": "Música en Vivo",
@@ -57,6 +57,18 @@
         "hora_inicio": "21:30:00",
         "hora_fin": "00:40:00",
         "descripcion": "Presenta: Tour el amor 30 años después del amor",
-        "imagen": "models/imagen4.jpg"
+        "imagen": "assets/imagen4.jpg"
+    },
+    {
+        "Tipo": "Evento En Muerto",
+        "id_evento": 5,
+        "nombre": "Miguel Mateos en salta",
+        "artista": "Miguel Mateos",
+        "genero": "Rock",
+        "id_ubicacion": "2",
+        "hora_inicio": "20:45:00",
+        "hora_fin": "02:47:18",
+        "descripcion": "Presentación de gira",
+        "imagen": "assets/imagen0.jpg"
     }
 ]
