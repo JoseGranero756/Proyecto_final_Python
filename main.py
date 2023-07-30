@@ -60,10 +60,3 @@ class Aplicacion(tk.Tk):
 if __name__ == "__main__":
     app = Aplicacion()
     app.mainloop()
-        
-        
-
-
-        
-        
-        

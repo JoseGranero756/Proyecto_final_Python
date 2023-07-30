@@ -1,7 +1,7 @@
 import tkinter as tk
 from controllers.controlador_mapa import MapViewer
 
-class MainWindow(tk.Tk):
+class Aplicacion(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Tour Musical")
@@ -17,5 +17,5 @@ class MainWindow(tk.Tk):
         map_window.show()
 
 if __name__ == "__main__":
-    app = MainWindow()
+    app = Aplicacion()
     app.mainloop()

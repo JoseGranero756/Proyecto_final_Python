@@ -17,6 +17,8 @@ class VistaInicio(tk.Frame):
         self.titulo = tk.Label(self, text="Tour musical", font=titulo_font)
         self.titulo.grid(row=0, column=0, pady=5)
 
+
+
         # Define una fuente más pequeña para la descripción de la funcionalidad
         descripcion_font = Font(size=12)
 

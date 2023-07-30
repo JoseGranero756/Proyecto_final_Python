@@ -44,13 +44,8 @@
         "id_ubicacion": "2",
         "hora_inicio": "10:40:00",
         "hora_fin": "13:59:02",
-<<<<<<< HEAD
-        "descripcion": "Éxitos de álbumes como “Solo Negocios”, “En punga” y su último lanzamiento en grupo “MDB”",
-        "imagen": "assets/imagen3.jpg"
-=======
         "descripcion": "Éxitos de álbumes como “Solo Negocios”",
         "imagen": "models/imagen3.jpg"
->>>>>>> 41d86cef6349f83a6d57d66b664865090884b25d
     },
     {
         "Tipo": "Evento",
