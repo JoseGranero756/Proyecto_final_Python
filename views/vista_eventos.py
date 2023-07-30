@@ -23,7 +23,7 @@ class VistaEventos(tk.Frame):
         
         # Crea el botón para ir a inicio y lo agrega a la vista
         self.boton_inicio = tk.Button(
-            self,text = "Ir a Inicio", command=self.controlador.regresar_inicio
+            self,text = "Ir al Inicio", command=self.controlador.regresar_inicio
         )
         self.boton_inicio.pack(pady=10)
         
