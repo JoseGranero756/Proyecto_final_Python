@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 from models.Evento import Evento
 from models.Usuario import Usuario
 from models.Review import Review
@@ -23,9 +24,10 @@ class Aplicacion(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         self.title("Tour de musica")
-        self.geometry("600x600")
+        self.geometry("850x350")
         self.inicializar()
         self.cambiar_frame(self.vista_inicio)
+        self.configure(bg="#E5E5E5")
     
     def inicializar(self):
         eventos = Evento.cargar_de_json("data/evento.json")
@@ -47,6 +49,7 @@ class Aplicacion(tk.Tk):
         self.vista_eventos_asistidos = VistaEventosAsistidos(self,controlador_eventos_asistidos)
         self.vista_busca_filtra = VistaBuscaFiltra(self,controlador_busca_filtra)
         self.vista_busca = VistaBusca(self,controlador_busca)
+        self.vista_busca.place(width=850,height=350)
         
         self.ajustar_frame(self.vista_inicio)
         self.ajustar_frame(self.vista_eventos)
@@ -56,7 +59,7 @@ class Aplicacion(tk.Tk):
         self.ajustar_frame(self.vista_busca)
         
     def ajustar_frame(self, frame):
-        frame.grid(row=0, column=0, sticky="nsew")
+        frame.grid(row=0, column=0, sticky = N+S+E+W)
         
     def cambiar_frame(self, frame_destino):
         frame_destino.tkraise()

@@ -3,7 +3,6 @@ import tkinter as tk
 class VistaBuscaFiltra(tk.Frame):
     def __init__(self, master = None, controlador = None):
         
-        
         super().__init__(master)
         self.master = master
         self.controlador = controlador
