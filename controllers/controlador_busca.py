@@ -43,7 +43,7 @@ class ControladorBusca:
                     eventos.append(evento)
             return(eventos)
     
-    def filtrar_eventos_nombre_artista(self,nombre):
+    def filtrar_eventos_artista_hora(self,nombre):
         lista = self.obtener_eventos_artista(nombre)
         horas = []
         eventos = []
@@ -54,7 +54,7 @@ class ControladorBusca:
                     eventos.append(evento)
             return(eventos)
     
-    def filtrar_eventos_nombre_genero(self,genero):
+    def filtrar_eventos_genero_hora(self,genero):
         lista = self.obtener_eventos_genero(genero)
         horas = []
         eventos = []
@@ -73,11 +73,26 @@ class ControladorBusca:
                 lista.append(evento)
         return lista
     
+    def filtrar_hora_artista(self,hora,artista):
+        lista = []
+        eventos = self.obtener_eventos_artista(artista)
+        for evento in eventos:
+            if hora == evento.hora_inicio:
+                lista.append(evento)
+        return lista
+    
+    def filtrar_hora_genero(self,hora,genero):
+        lista = []
+        eventos = self.obtener_eventos_genero(genero)
+        for evento in eventos:
+            if hora == evento.hora_inicio:
+                lista.append(evento)
+        return lista
+    
     def volver_atras(self):
         self.app.cambiar_frame(self.app.vista_busca_filtra)
     
     def seleccionar_evento(self):
-        
         indice = self.app.vista_busca.obtener_evento_seleccionado()
         if indice is not None:
             evento = self.modelo_evento[indice]

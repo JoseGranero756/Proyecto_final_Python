@@ -8,5 +8,5 @@ class ControladorInicio:
         self.app.cambiar_frame(self.app.vista_eventos_asistidos)
         
     def mostrar_busca_filtra(self):
-        self.app.cambiar_frame(self.app.vista_busca_filtra)
+        self.app.cambiar_frame(self.app.vista_busca)
     

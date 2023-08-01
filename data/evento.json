@@ -70,5 +70,17 @@
         "hora_fin": "02:47:18",
         "descripcion": "Presentación de gira",
         "imagen": "assets/imagen0.jpg"
+    },
+    {
+        "Tipo": "Evento En Vivo se cae de culo",
+        "id_evento": 0,
+        "nombre": "Evento En Vivo se cae de culo",
+        "artista": "Miguel Mateos",
+        "genero": "Rock",
+        "id_ubicacion": "2",
+        "hora_inicio": "21:30:00",
+        "hora_fin": "02:47:18",
+        "descripcion": "Presentación de gira",
+        "imagen": "assets/imagen0.jpg"
     }
 ]
