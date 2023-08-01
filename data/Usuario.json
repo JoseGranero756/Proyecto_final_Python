@@ -4,34 +4,34 @@
         "id_usuario": 0,
         "nombre": "Nombre0",
         "apellido": "Apellido0",
-        "historial_eventos": "[]"
+        "historial_eventos": []
     },
     {
         "Tipo": "Usuario",
         "id_usuario": 1,
         "nombre": "Nombre1",
         "apellido": "Apellido1",
-        "historial_eventos": "[0]"
+        "historial_eventos": [0]
     },
     {
         "Tipo": "Usuario",
         "id_usuario": 2,
         "nombre": "Nombre2",
         "apellido": "Apellido2",
-        "historial_eventos": "[0, 1]"
+        "historial_eventos": [0, 1]
     },
     {
         "Tipo": "Usuario",
         "id_usuario": 3,
         "nombre": "Nombre3",
         "apellido": "Apellido3",
-        "historial_eventos": "[0, 1, 2]"
+        "historial_eventos": [0, 1, 2]
     },
     {
         "Tipo": "Usuario",
         "id_usuario": 4,
         "nombre": "Nombre4",
         "apellido": "Apellido4",
-        "historial_eventos": "[0, 1, 2, 3]"
+        "historial_eventos": [0, 1, 2, 3]
     }
 ]
