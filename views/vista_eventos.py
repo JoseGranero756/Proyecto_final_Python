@@ -12,16 +12,19 @@ class VistaEventos(tk.Frame):
         self.titulo = tk.Label(self,text = "lista de eventos")
         self.titulo.pack(pady=10)
         
+        # Crea la listbox donde se va a ver la lista de eventos.
         self.listbox = tk.Listbox(self)
         self.listbox.config(width=50)
         
-        # Asocia el evento de doble click a la función seleccionar_evento
+        # Asocia el evento de doble click a la función seleccionar_evento.
         self.listbox.bind("<Double-Button-1>",self.seleccionar_evento)
         
         self.listbox.pack(pady=10)
-        self.actualizar_eventos()
         
-        # Crea el botón para ir a inicio y lo agrega a la vista
+        # Llama a la función actualizar eventos.
+        self.actualizar_eventos() 
+        
+        # Crea el botón para ir a inicio y lo agrega a la vista.
         self.boton_inicio = tk.Button(
             self,text = "Ir al Inicio", command=self.controlador.regresar_inicio
         )

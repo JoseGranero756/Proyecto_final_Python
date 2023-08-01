@@ -12,6 +12,7 @@ class VistaEventosAsistidos(tk.Frame):
         self.titulo = tk.Label(self,text = "Eventos Asistidos")
         self.titulo.pack(pady=10)
         
+        # Crea la listbox donde se van a ver los evnetnos asistidos
         self.listbox = tk.Listbox(self)
         self.listbox.config(width=50)
         
@@ -29,7 +30,7 @@ class VistaEventosAsistidos(tk.Frame):
         
     def actualizar_eventos_asistidos(self):
         """
-        actualiza la lista de eventos asisstidos con los eventos obtenidos en contolador.
+        Actualiza la lista de eventos asistidos con los eventos obtenidos en contolador.
         
         """
         eventos = self.controlador.obtener_eventos_asistidos()
@@ -38,7 +39,7 @@ class VistaEventosAsistidos(tk.Frame):
             self.listbox.insert(tk.END, evento.nombre)
     def obtener_evento_asistido_seleccionado(self):
         """
-        Retorna el indice del evento seleccionado en la lista
+        Retorna el indice del evento seleccionado en la lista.
         """
         indice = self.listbox.curselection()
         if indice:

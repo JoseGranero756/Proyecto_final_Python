@@ -28,18 +28,21 @@ class Aplicacion(tk.Tk):
         self.configure(bg="#E5E5E5")
     
     def inicializar(self):
-        eventos = Evento.cargar_de_json("data/evento.json")
+        """
+        Inicializa los objetos del programa
+        """
+        eventos = Evento.cargar_de_json("data/evento.json") 
         reviews = Review.cargar_de_json("data/review.json")
         usuarios = Usuario.cargar_de_json("data/usuario.json")
+        ubicacion = Ubicacion.cargar_de_json("data/ubicacion.json")
         
-        
-        usuario_activo = usuarios[2]
+        usuario_activo = usuarios[2] # Carga el usuario en el indice 2 de la lista de usuarios
          
-        controlador_inicio = ControladorInicio(self)
+        controlador_inicio = ControladorInicio(self) 
         controlador_eventos = ControladorEventos(self,eventos)
         controlador_eventos_asistidos = ControladorEventosAsistidos(self,usuario_activo,eventos)
         controlador_info = ControladorInfo(self)
-        controlador_busca = ControladorBusca(self,eventos)
+        controlador_busca = ControladorBusca(self,eventos,ubicacion)
         
         self.vista_inicio = VistaInicio(self, controlador_inicio)
         self.vista_eventos = VistaEventos(self, controlador_eventos)
@@ -48,6 +51,7 @@ class Aplicacion(tk.Tk):
         self.vista_busca = VistaBusca(self,controlador_busca)
         self.vista_busca.place(width=850,height=350)
         
+        
         self.ajustar_frame(self.vista_inicio)
         self.ajustar_frame(self.vista_eventos)
         self.ajustar_frame(self.vista_info)
@@ -55,11 +59,21 @@ class Aplicacion(tk.Tk):
         self.ajustar_frame(self.vista_busca)
         
     def ajustar_frame(self, frame):
+        """
+        Ajusta el frame del programa
+        """
         frame.grid(row=0, column=0, sticky = N+S+E+W)
         
     def cambiar_frame(self, frame_destino):
+        """
+        Cambia la vista de frame del programa por un frame dado
+        """
         frame_destino.tkraise()
+    
     def destruir_frame(self, frame):
+        """
+        Destruye un frame dado
+        """
         frame.destroy()
         
 if __name__ == "__main__":

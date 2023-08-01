@@ -1,9 +1,13 @@
 class ControladorEventosAsistidos:
     def __init__(self,app,modelo_usuario,modelo_evento):
         self.app = app
-        self.modelo_usuario = modelo_usuario
+        # Lista de usuarios psaada del json usuarios 
+        self.modelo_usuario = modelo_usuario 
+        # Lista de eventos cargada del json evento
         self.modelo_evento = modelo_evento
+        # Lista vacía para después cargar los eventos a los que asistió el usuario
         self.lista_asistidos = []
+    
     def obtener_eventos_asistidos(self):
         """
         obtiene una lista de los eventos que coinciden en id con los asistidos por el usuario
