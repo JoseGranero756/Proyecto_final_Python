@@ -22,5 +22,7 @@ class ControladorReview:
         self.app.cambiar_frame(self.app.vista_inicio)        
     
 
-        
+    def conseguir_id_review(self):
+        return len(self.modelo_review) 
+
         
