@@ -8,6 +8,7 @@ class Review:
         self.calificacion = calificacion
         self.comentario = comentario
         self.animo = animo #nEl profe dijo que podria ser un boton que cada que lo arpieten sume uno
+    
     @classmethod
     def de_json(cls, json_dato):
         """Devuelve un ojeto de tipo de esta clase."""
@@ -40,3 +41,8 @@ class Review:
             lista_objeto_review.append(review_objeto)    
         return lista_objeto_review
     
+    @classmethod
+    def cargar_a_json(cls,archivo,lista):
+        with open(archivo, "w") as f:
+            json.dump(lista, f, indent=4)
+        print("Guardado correctamente.")
