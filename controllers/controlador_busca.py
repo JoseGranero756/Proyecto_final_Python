@@ -90,6 +90,18 @@ class ControladorBusca:
                     horas.append(evento.hora_inicio)
                     eventos.append(evento)
             return(eventos)
+        
+    def filtrar_eventos_nombre_ubicacion(self,eventos):
+        """
+        Crea una lista de ubicaciones para mostrar en la listbox filtro_ubicaciones.
+        """
+        ubicaciones = []
+        if type(eventos) == list:
+            for evento in eventos:
+                if self.modelo_ubicacion[evento.id_ubicacion] not in ubicaciones:
+                    ubicaciones.append(self.modelo_ubicacion[evento.id_ubicacion])
+            return ubicaciones
+        
     
     def filtrar_hora_nombre(self,hora,nombre):
         """
@@ -123,6 +135,7 @@ class ControladorBusca:
             if hora == evento.hora_inicio:
                 lista.append(evento)
         return lista
+    
     
     def seleccionar_evento(self):
         """
