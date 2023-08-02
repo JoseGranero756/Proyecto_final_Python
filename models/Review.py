@@ -8,6 +8,7 @@ class Review:
         self.calificacion = calificacion
         self.comentario = comentario
         self.animo = animo #nEl profe dijo que podria ser un boton que cada que lo arpieten sume uno
+    
     @classmethod
     def de_json(cls, json_dato):
         """Devuelve un ojeto de tipo de esta clase."""
