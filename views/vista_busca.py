@@ -21,13 +21,15 @@ class VistaBusca(tk.Frame):
         self.descripcion_artista = tk.Label(self,text = "Buscar eventos por artista",font = ("Open Sans",15))
         self.descripcion_genero = tk.Label(self,text = "Buscar eventos por genero",font = ("Open Sans",15))
         self.descripcion_entry = tk.Label(self,text = "Buscar escribiendo aquí",font = ("Open Sans",15))
-        self.descripcion_filtro = tk.Label(self,text = "filtrado por hora", font = ("Open Sans",15))
+        self.descripcion_filtro_hora = tk.Label(self,text = "Filtrado por hora", font = ("Open Sans",15))
+        self.descripcion_filtro_ubicacion = tk.Label(self,text = "Filtrado por ubicación",font = ("Open Sans",15))
         
         self.descripcion_nombre.grid(row=3,column=0)
         self.descripcion_artista.grid(row=3,column=1)
         self.descripcion_genero.grid(row=3,column=2)
-        self.descripcion_entry.grid(row=1,columnspan = 3)
-        self.descripcion_filtro.grid(row=5)
+        self.descripcion_entry.grid(row=1,columnspan=3)
+        self.descripcion_filtro_hora.grid(row=5,column=0)
+        self.descripcion_filtro_ubicacion.grid(row=5,column=2)
         
         # Crea la listbox donde se muestran los eventos por nombre, artista y genero.
         self.listbox = tk.Listbox(self)
@@ -39,11 +41,19 @@ class VistaBusca(tk.Frame):
          # Crea una listbox pequeña donde se va a ver el contenido para filtrar por hora
         self.filtrado_hora = tk.Listbox(self)
         self.filtrado_hora.grid(row = 6)
-        # Asocia el doble click en la listbox al metodo filtrar_eventos_hora
+        # Asocia el doble click en la listbox filtrado_hora al metodo filtrar_eventos_hora
         self.filtrado_hora.bind("<Double-Button-1>",self.filtrar_eventos_hora)
         
-        # Crea la variable filtrado, que va a retener los datos de la ultima lista filtrada
-        self.filtrado = None
+        # Crea una listbox pequeña donde se va a ver el contenido para filtrar por ubicación
+        self.filtrado_ubicacion = tk.Listbox(self)
+        self.filtrado_ubicacion.grid(row = 6,column = 2)
+        # Asocia el doble click en la listbox filtrado_ubicacion al metodo filtrar_eventos_ubicacion
+        # self.filtrado_ubicacion.bind("<Double=Button-1>",self.filtrar_eventos_ubicacion)
+        
+        # Crea la variable filtrado, que va a retener los datos de la ultima lista filtrada por hora
+        self.eventos_filtrados_hora = None
+        # Crea la variable filtrado, que va a retener los datos de la ultima lista filtrada por ubicacion
+        self.ubicaciones_filtradas = None
         
         # Crea el el cuadro de entry para la busqueda
         self.texto = tk.Entry(self)
@@ -86,13 +96,15 @@ class VistaBusca(tk.Frame):
         con el nombre pasado.
         """
         
-        # Almacena el get entry en la variable alm_entry.
+        # Almacena el entry.get() en la variable alm_entry.
         self.alm_entry = nombre
+        
         # Almacena el botón apretado en la variable bandera.
         self.bandera = "nombre"
         
         # Obtiene los eventos coincidentes con el nombre pasado, llamando a la función en el controlador.
         eventos = self.controlador.obtener_eventos_nombre(nombre)
+        
         # Controla de que el retorno de la función sea tipo lista.
         if type(eventos) == list:
             # Borra datos preexistentes en la listbox principal.
@@ -104,6 +116,19 @@ class VistaBusca(tk.Frame):
             # Si el dato no era tipo lista se toman como mensaje de error y se cargan en la listbox.
             self.listbox.delete(0,tk.END)
             self.listbox.insert(tk.END,f"{eventos}")
+        
+        # obtiene las ubicaciones que coinciden con la lista de eventos del nombre dado sin repetidas.
+        self.ubicaciones_filtradas = self.controlador.filtrar_eventos_nombre_ubicacion(eventos)
+        # Controla que el tipo de dato sea lista
+        if type(self.ubicaciones_filtradas) == list:
+            # Borra datos preexistentes en la listbox.
+            self.filtrado_ubicacion.delete(0,tk.END)
+            # Carga los datos en la listbox de filtrado de ubicaciones.
+            for ubicacion in self.ubicaciones_filtradas:
+                self.filtrado_ubicacion.insert(tk.END,f"{ubicacion.direccion}")
+            
+            
+            
     
     def actualizar_eventos_artista(self,artista):
         """
@@ -169,7 +194,7 @@ class VistaBusca(tk.Frame):
         Carga las horas que están dentro de la lista en eventos que coincidan al nombre pasado.
         """
         eventos = self.controlador.filtrar_eventos_nombre_hora(nombre) # Trae los eventos que coinciden con el nombre y sin repetir las horas de inicio,
-        self.filtrado = eventos # Guarda la lista, para poder leer luego la posición de uno de sus elementos con doble click en la listbox
+        self.eventos_filtrados_hora = eventos # Guarda la lista, para poder leer luego la posición de uno de sus elementos con doble click en la listbox
         
         # Carga las horas asociadas al nombre en la listbox de filtrado por hora
         self.filtrado_hora.delete(0, tk.END)
@@ -178,14 +203,14 @@ class VistaBusca(tk.Frame):
     
     def filtrar_eventos_artista_hora(self,artista):
         eventos = self.controlador.filtrar_eventos_artista_hora(artista)
-        self.filtrado = eventos
+        self.eventos_filtrados_hora = eventos
         self.filtrado_hora.delete(0, tk.END)
         for evento in eventos:
             self.filtrado_hora.insert(tk.END,f"hora de inicio: {evento.hora_inicio}")
     
     def filtrar_eventos_genero_hora(self,genero):
         eventos = self.controlador.filtrar_eventos_genero_hora(genero)
-        self.filtrado = eventos
+        self.eventos_filtrados_hora = eventos
         self.filtrado_hora.delete(0, tk.END)
         for evento in eventos:
             self.filtrado_hora.insert(tk.END,f"hora de inicio: {evento.hora_inicio}")
@@ -200,22 +225,25 @@ class VistaBusca(tk.Frame):
         # Controla la categoría de la ultima busqueda realizada.
         if self.bandera == "nombre": 
             # Llama al metodo de filtrado dandole la hora con el indice obtenido en la lista almacenada en self.filtrado y el nombre del entry.get()
-            eventos = self.controlador.filtrar_hora_nombre(self.filtrado[indice].hora_inicio,self.alm_entry) 
+            eventos = self.controlador.filtrar_hora_nombre(self.eventos_filtrados_hora[indice].hora_inicio,self.alm_entry) 
             # Borra el contenido de la listbox principal
             self.listbox.delete(0, tk.END)
             # Carga los eventos obtenidos en la listbox principal
             for evento in eventos:
                 self.listbox.insert(tk.END,f"Nombre: {evento.nombre} Artista: {evento.artista} Genero: {evento.genero}")
         elif self.bandera == "artista":
-            eventos = self.controlador.filtrar_hora_artista(self.filtrado[indice].hora_inicio,self.alm_entry)
+            eventos = self.controlador.filtrar_hora_artista(self.eventos_filtrados_hora[indice].hora_inicio,self.alm_entry)
             self.listbox.delete(0, tk.END)
             for evento in eventos:
                 self.listbox.insert(tk.END,f"Nombre: {evento.nombre} Artista: {evento.artista} Genero: {evento.genero}")
         elif self.bandera == "genero":
-            eventos = self.controlador.filtrar_hora_genero(self.filtrado[indice].hora_inicio,self.alm_entry)
+            eventos = self.controlador.filtrar_hora_genero(self.eventos_filtrados_hora[indice].hora_inicio,self.alm_entry)
             self.listbox.delete(0, tk.END)
             for evento in eventos:
                 self.listbox.insert(tk.END,f"Nombre: {evento.nombre} Artista: {evento.artista} Genero: {evento.genero}")
+                
+    def filtrar_eventos_ubicacion(self):
+        pass
             
             
             

@@ -2,7 +2,7 @@
     {   "Tipo": "Ubicaciôn",
         "id_ubicacion": 0,
         "nombre": "Miguel Mateos",
-        "direccion": "Zuviría 70, Salta Capital",
+        "direccion": "Zuviria 70, Salta Capital",
         "coordenadas":[-24.789011090594087, -65.40955358801618]
     },
     {   
@@ -16,14 +16,14 @@
         "Tipo": "Ubicaciôn",
         "id_ubicacion": 2,
         "nombre": "El Cuarteto de Nos",
-        "direccion": "Zuviría 70, Salta Capital",
+        "direccion": "Zuviria 70, Salta Capital",
         "coordenadas": [-24.789011090594087, -65.40955358801618]
     },
     {   
         "Tipo": "Ubicaciôn",
         "id_ubicacion": 3,
         "nombre": "Homer el Mero Mero",
-        "direccion": "Zuviría 70, Salta Capital",
+        "direccion": "caseros 2000, Salta Capital",
         "coordenadas":[-24.789011090594087, -65.40955358801618]
     },
     {   

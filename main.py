@@ -11,12 +11,14 @@ from views.vista_inicio import VistaInicio
 from views.vista_info import VistaInfo
 from views.vista_eventos_asistidos import VistaEventosAsistidos
 from views.vista_busca import VistaBusca
+from views.vista_review import VistaReview
 
 from controllers.controlador_inicio import ControladorInicio
 from controllers.controlador_eventos import ControladorEventos
 from controllers.controlador_info import ControladorInfo
 from controllers.controlador_eventos_asistidos import ControladorEventosAsistidos
 from controllers.controlador_busca import ControladorBusca
+from controllers.controlador_review import ControladorReview
 
 class Aplicacion(tk.Tk):
     def __init__(self):
@@ -43,13 +45,15 @@ class Aplicacion(tk.Tk):
         controlador_eventos_asistidos = ControladorEventosAsistidos(self,usuario_activo,eventos)
         controlador_info = ControladorInfo(self)
         controlador_busca = ControladorBusca(self,eventos,ubicacion)
+        controlador_review = ControladorReview(self,eventos,reviews)
         
         self.vista_inicio = VistaInicio(self, controlador_inicio)
         self.vista_eventos = VistaEventos(self, controlador_eventos)
         self.vista_info = VistaInfo(self, controlador_info)
         self.vista_eventos_asistidos = VistaEventosAsistidos(self,controlador_eventos_asistidos)
         self.vista_busca = VistaBusca(self,controlador_busca)
-        self.vista_busca.place(width=850,height=350)
+        self.vista_review = VistaReview(self,controlador_review)
+        
         
         
         self.ajustar_frame(self.vista_inicio)
@@ -57,7 +61,9 @@ class Aplicacion(tk.Tk):
         self.ajustar_frame(self.vista_info)
         self.ajustar_frame(self.vista_eventos_asistidos)
         self.ajustar_frame(self.vista_busca)
-        
+        self.ajustar_frame(self.vista_review)
+    
+    
     def ajustar_frame(self, frame):
         """
         Ajusta el frame del programa
