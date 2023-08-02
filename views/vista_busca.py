@@ -109,6 +109,7 @@ class VistaBusca(tk.Frame):
         
         # Controla de que el retorno de la función sea tipo lista.
         if type(eventos) == list:
+            self.lista_eventos = eventos
             # Borra datos preexistentes en la listbox principal.
             self.listbox.delete(0, tk.END)
             # Carga los datos obtenidos en la listbox principal.
@@ -152,6 +153,7 @@ class VistaBusca(tk.Frame):
         eventos = self.controlador.obtener_eventos_artista(artista)
         # Controla de que sea tipo lista para mostrar el objeto
         if type(eventos) == list:
+            self.lista_eventos = eventos
             # Borra el contenido previo de la listbox principal
             self.listbox.delete(0, tk.END)
             # inserta los datos en la listbox principal
@@ -197,6 +199,7 @@ class VistaBusca(tk.Frame):
         eventos = self.controlador.obtener_eventos_genero(genero)
         # Controla que el resultado sea tipo lista
         if type(eventos) == list:
+            self.lista_eventos = eventos
             # Si es tipo lista
             # Borra datos preexistentes en la listbox principal
             self.listbox.delete(0, tk.END)
@@ -238,7 +241,7 @@ class VistaBusca(tk.Frame):
         Retorna el indice del evento seleccionado en la listbox principal.
         """
         indice = self.listbox.curselection()
-        if indice:
+        if indice and type(self.lista_eventos) == list:
             return self.lista_eventos[indice[0]].id_evento
         else:
             return None
