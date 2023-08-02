@@ -48,50 +48,18 @@ class ControladorBusca:
         else:
             # Si no hay coincidencias, devuelve un string con el error
             return f"el genero {genero} no existe en la base de datos"
-    
-    def filtrar_eventos_nombre_hora(self,nombre):
-        """
-        Crea una lista de horas asociadas a un evento filtrado por un nombre dado y quitando repetidas
-        """
-        lista = self.obtener_eventos_nombre(nombre)
-        horas = []
-        eventos = []
-        if type(lista) == list:
-            for evento in lista:
-                if evento.hora_inicio not in horas:
-                    horas.append(evento.hora_inicio)
-                    eventos.append(evento)
-            return(eventos)
-    
-    def filtrar_eventos_artista_hora(self,artista):
-        """
-        Crea una lista de horas asociadas a un evento filtrado por un artista dado y quitando horas repetidas
-        """
-        lista = self.obtener_eventos_artista(artista)
-        horas = []
-        eventos = []
-        if type(lista) == list:
-            for evento in lista:
-                if evento.hora_inicio not in horas:
-                    horas.append(evento.hora_inicio)
-                    eventos.append(evento)
-            return(eventos)
-    
-    def filtrar_eventos_genero_hora(self,genero):
-        """
-        Crea una lista de horas asociadas a un evento filtrado por un genero dado y quitando horas repetidas
-        """
-        lista = self.obtener_eventos_genero(genero)
-        horas = []
-        eventos = []
-        if type(lista) == list:
-            for evento in lista:
-                if evento.hora_inicio not in horas:
-                    horas.append(evento.hora_inicio)
-                    eventos.append(evento)
-            return(eventos)
         
-    def filtrar_eventos_nombre_ubicacion(self,eventos):
+    def filtrar_eventos_hora(self,eventos):
+        horas = []
+        lista = []
+        if type(eventos) == list:
+            for evento in eventos:
+                if evento.hora_inicio not in horas:
+                    horas.append(evento.hora_inicio)
+                    lista.append(evento)
+        return(lista)
+        
+    def filtrar_eventos_ubicacion(self,eventos):
         """
         Crea una lista de ubicaciones para mostrar en la listbox filtro_ubicaciones.
         """
@@ -100,8 +68,7 @@ class ControladorBusca:
             for evento in eventos:
                 if self.modelo_ubicacion[evento.id_ubicacion] not in ubicaciones:
                     ubicaciones.append(self.modelo_ubicacion[evento.id_ubicacion])
-            return ubicaciones
-        
+            return ubicaciones 
     
     def filtrar_hora_nombre(self,hora,nombre):
         """
@@ -136,7 +103,29 @@ class ControladorBusca:
                 lista.append(evento)
         return lista
     
+    def filtrar_ubicacion_nombre(self,ubicacion,nombre):
+        lista = []
+        eventos = self.obtener_eventos_nombre(nombre)
+        for evento in eventos:
+            if evento.id_ubicacion == ubicacion:
+                lista.append(evento)
+        return lista
     
+    def filtrar_ubicacion_artista(self,ubicacion,artista):
+        lista = []
+        eventos = self.obtener_eventos_artista(artista)
+        for evento in eventos:
+            if evento.id_ubicacion == ubicacion:
+                lista.append(evento)
+        return lista
+    
+    def filtrar_ubicacion_genero(self,ubicacion,genero):
+        lista = []
+        eventos = self.obtener_eventos_genero(genero)
+        for evento in eventos:
+            if evento.id_ubicacion == ubicacion:
+                lista.append(evento)
+        return lista
     def seleccionar_evento(self):
         """
         Selecciona un evento de la listbox principal, lo pasa a vista_info y cambia el frame a esa vista

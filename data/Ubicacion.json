@@ -2,7 +2,7 @@
     {   "Tipo": "Ubicaciôn",
         "id_ubicacion": 0,
         "nombre": "Miguel Mateos",
-        "direccion": "Zuviria 70, Salta Capital",
+        "direccion": "Zuviria 300, Salta Capital",
         "coordenadas":[-24.789011090594087, -65.40955358801618]
     },
     {   
@@ -16,7 +16,7 @@
         "Tipo": "Ubicaciôn",
         "id_ubicacion": 2,
         "nombre": "El Cuarteto de Nos",
-        "direccion": "Zuviria 70, Salta Capital",
+        "direccion": "Balcarce 2000, Salta Capital",
         "coordenadas": [-24.789011090594087, -65.40955358801618]
     },
     {   
