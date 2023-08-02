@@ -24,7 +24,7 @@ class Aplicacion(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         self.title("Tour de musica")
-        self.geometry("850x350")
+        self.geometry("1000x800")
         self.inicializar()
         self.cambiar_frame(self.vista_inicio)
         self.configure(bg="#E5E5E5")

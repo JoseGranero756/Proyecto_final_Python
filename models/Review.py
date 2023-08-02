@@ -41,3 +41,8 @@ class Review:
             lista_objeto_review.append(review_objeto)    
         return lista_objeto_review
     
+    @classmethod
+    def cargar_a_json(cls,archivo,lista):
+        with open(archivo, "w") as f:
+            json.dump(lista, f, indent=4)
+        print("Guardado correctamente.")
